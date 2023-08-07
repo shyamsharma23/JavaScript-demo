@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="name">
+        <label for="name">Write..</label>
+        <input type="text" onkeypress=myFunction(event) id="eid">
+        <button>Submit</button>
+    </form>
+    <div id="val"></div>
+    <span id="myId"></span>
+    <script>
+        // Write your logic here..
+
+        const obj = document.getElementById("name");
+        const a = document.getElementById("myId");
+        const b = document.getElementById("eid");
+        function myFunction(event) {
+            // a.innerText = b.value;
+            console.log(event);
+
+            const obj = document.createElement("span");
+            obj.innerText = event.key;
+            const c = document.getElementById("val");
+            c.appendChild(obj);
+            console.log(event.key);
+            console.log(b);
+        }
+
+        console.log(obj);
+
+    </script>
+
+</body>
+
+</html>
