@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <div id="myID">
+
+    </div>
+
+    <script>
+        const fetchTodo = async () => {
+            const url = "http://localhost:5000/api/v1/todos";
+            const data = await axios.get(url)
+                .then((res) => res.data)
+                .catch(err => console.log(err))
+
+            console.log(data);
+
+            console.log("Hello");
+
+
+
+            data.map((item) => {
+                const ele = document.createElement("p");
+
+                ele.innerText = item.description;
+
+
+                document.getElementById("myID").appendChild(ele);
+            })
+
+
+
+
+        }
+
+
+        fetchTodo();
+    </script>
+
+</body>
+
+</html>
